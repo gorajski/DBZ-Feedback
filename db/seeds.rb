@@ -39,7 +39,8 @@ end
 		check_in?: boolean_sample,
 		percent_drive: percentage_sample,
 		clarity_of_communication: percentage_sample,
-		content: Faker::Lorem.paragraphs(4).join('\n')
+		content: Faker::Lorem.paragraphs(4).join('\n'),
+		appropriate: boolean_sample
 		)
 end
 1000.times do

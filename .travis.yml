@@ -4,10 +4,10 @@ rvm:
 env:
 - DB=postgresql
 script:
-- rails test
+- rails spec
 before_script:
-- bundle exec rake db:create RAILS_ENV=test
-- bundle exec rake db:migrate
+- rails db:create RAILS_ENV=test
+- rails db:migrate
 bundler_args: "--binstubs=./bundler_stubs"
 deploy:
   provider: heroku

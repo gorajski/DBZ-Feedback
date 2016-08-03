@@ -49,7 +49,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="577" y="280" name="feedbacks">
+<table x="569" y="278" name="feedbacks">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -81,6 +81,9 @@
 <default>NULL</default></row>
 <row name="content" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="appropriate?" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>

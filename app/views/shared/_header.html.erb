@@ -1,14 +1,14 @@
 <header id="landing-page">
-	<h1 id="logo"> DBZ Feedback </h1>
+	<h1 id="logo"> <span class="dbz">DBZ</span>FEEDBACK </h1>
 	<nav id="site-nav">
 		<ul>
 			<% if logged_in? %>
-			<li ><%= link_to "Leave Feedback", new_feedback_path %></li>
-			<li class="divider-right"><%= link_to "Review Feedback", new_review_path %></li>
-			<li><%= link_to "Log Out",destroy_session_path %></li>
+			<li ><%= link_to "LEAVE FEEDBACK", new_feedback_path %></li>
+			<li class="divider-right"><%= link_to "REVIEW FEEDBACK", new_review_path %></li>
+			<li><%= link_to "LOG OUT",destroy_session_path %></li>
 			<% else %>
-			<li><%= link_to "Log In", new_sessions_path %></li>
-			<li><%= link_to "Register", new_user_path %> </li>
+			<li><%= link_to "LOG IN", new_sessions_path %></li>
+			<li><%= link_to "REGISTER", new_user_path %> </li>
 			<% end %>
 		</ul>
 	</nav>

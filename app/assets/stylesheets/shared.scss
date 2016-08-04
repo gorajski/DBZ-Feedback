@@ -1,0 +1,35 @@
+$dbc-blue:lightseagreen;
+$dbc-gray:lightslategray;
+$dbc-font: AmsiPro-Bold;
+$dbc-gold: gold;
+$dbc-blue-highlight: #a5e0dd;
+
+
+.center{ margin-left:auto;
+margin-right:auto;
+}
+
+body{
+	font-family: $dbc-font;
+}
+
+.dbz{
+	color: $dbc-blue;
+}
+
+
+
+a{
+	text-decoration:none;
+	color:$dbc-blue;
+}
+
+a:hover{
+	color: $dbc-blue-highlight;
+}
+
+.container{
+	width: 90%;
+	height: 100%;
+}
+

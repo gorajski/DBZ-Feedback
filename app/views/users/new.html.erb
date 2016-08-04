@@ -3,6 +3,9 @@
 
 <%= form_for @user do |f| %>
 
+	<%= f.label :full_name %>
+	<%=	f.text_field :full_name %>
+
   <%= f.label :email %>
   <%= f.text_field :email %>
 

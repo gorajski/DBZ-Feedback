@@ -20,7 +20,7 @@ RSpec.describe ApplicationHelper, type: :helper do
 	describe "#current_user" do
 		context "a user is logged in" do
 			it "returns the current user object" do
-				user = User.create(email:"me@dbz.edu", password:"passw0rd")
+				user = User.create!(full_name: "Broseephus",email:"me@dbz.edu", password:"passw0rd")
 				session[:user_id] = user.id
 				expect(current_user).to eq user
 			end

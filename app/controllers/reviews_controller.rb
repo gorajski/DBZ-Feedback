@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.feedback = Feedback.find(params[:feedback_id])
     @review.reviewer = current_user
-    if @review.save!
+    if @review.save
       redirect_to root_path
     else
       @errors = ["You must fill in all three fields to submit valid feedback"]

@@ -1,9 +1,7 @@
 class Feedback < ApplicationRecord
-  has_many :reviews
-  belongs_to :author, class_name: :User
-  belongs_to :recipient, class_name: :User
-
-  validates_length_of :foo, :minimum => 5
+  has_many :reviews  #OK
+  belongs_to :author, class_name: :User  #OK
+  belongs_to :recipient, class_name: :User  #bad!
 
   validates :author_id, presence: true
   validates :recipient_id, presence: true

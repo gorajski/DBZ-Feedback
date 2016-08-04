@@ -44,7 +44,7 @@ end
 		)
 end
 1000.times do
-	Review.create(
+	Review.create!(
 		doable: percentage_sample,
 		benevolent: percentage_sample,
 		zeroed_in: percentage_sample,

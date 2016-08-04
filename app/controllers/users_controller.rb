@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    @feedback_given = @user.given_feedbacks
+    @feedback_received = @user.received_feedbacks
+  end
+
   private
 
   def user_params

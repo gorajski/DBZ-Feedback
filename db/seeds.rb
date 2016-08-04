@@ -18,11 +18,15 @@ def random_user
 	User.limit(1).order("RANDOM()").first
 end
 
+def random_feedback
+	Feedback.limit(1).order("RANDOM()").first
+end
+
 Feedback.delete_all
 User.delete_all
 Review.delete_all
 
-100.times do
+15.times do
 	User.create(
 		full_name: Faker::Name.name,
 		email: Faker::Hipster.word + "@dbz.edu",
@@ -44,12 +48,12 @@ end
 		)
 end
 1000.times do
-	Review.create!(
+	Review.create(
 		doable: percentage_sample,
 		benevolent: percentage_sample,
 		zeroed_in: percentage_sample,
 		reviewer_id: random_user.id,
-		feedback_id: random_user.id
+		feedback_id: random_feedback.id
 		)
 end
 

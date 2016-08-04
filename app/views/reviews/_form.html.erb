@@ -1,5 +1,5 @@
 <%= render partial: 'shared/error', collection:@errors if @errors %>
-<%= form_for [@feedback, @review], html: {id: "review-form"} do |r| %>
+<%= form_for [feedback, review], html: {id: "review-form"} do |r| %>
   <%= r.label :doable %>:
   <%= r.select("doable", Review::VALUES, {include_blank: true}) %><br />
 

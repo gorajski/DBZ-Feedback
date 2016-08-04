@@ -5,9 +5,25 @@
 	display:block;
 }
 
+.feedback{
+  width: 100%;
+  margin-top: 10px;
+
+}
+
+.date{
+  color: $dbc-gold;
+  font-style: normal;
+}
+
 #site-nav{
 	display: inline-block;
 	position: absolute;
+}
+
+#landing-page a{
+  text-decoration:none;
+  color:$dbc-blue;
 }
 
 #site-nav ul {
@@ -26,15 +42,83 @@
 	margin: 0;
 }
 
+.stat{
+display:inline-block;
+  width: 50px;
+  color: $dbc-blue;
+}
 .feedback-body {
   display: inline-block;
   max-width: 1000px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $dbc-gray;
+  font-style: italic;
+}
+
+.feedback-status{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30px;
+}
+.feedback-status p{
+margin-top:0;
+margin-bottom:0;
+}
+
+.feedback-header{
+  color: $dbc-blue;
+}
+.feedback-stats{
+  display:inline-block;
+  margin-left:0;
+  margin-top: 0;
+  list-style-type:none;
+  vertical-align: top;
 }
 
 #review-form {
   display: inline-block;
   vertical-align: top;
   max-width: 200px;
+}
+
+.tab-nav {
+  list-style-type: none;
+  padding-top:0;
+  margin-top:0;
+  border-bottom: 1px solid $dbc-gray;
+  position: relative;
+
+}
+
+.tab a{
+  color: $dbc-gray;
+  text-decoration:none;
+}
+
+.tab {
+  padding: 5px 5px 0px 5px;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  color: $dbc-gray;
+}
+
+.active{
+  border-top: 1px solid $dbc-gray;
+  border-left: 1px solid $dbc-gray;
+  border-right: 1px solid $dbc-gray;
+  border-bottom: 1px solid white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.active a {
+    color: $dbc-blue;
+}
+
+.name{
+  color: $dbc-gray;
 }

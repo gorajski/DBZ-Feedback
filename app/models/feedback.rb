@@ -12,4 +12,15 @@ class Feedback < ApplicationRecord
   validates :content, presence: true
   validates_length_of :content, :minimum => 10
 
+  def average_doability
+    (reviews.map(&:doable).reduce(:+)/reviews.count) rescue 0
+  end
+
+  def average_benevolence
+    (reviews.map(&:benevolence).reduce(:+)/reviews.count) rescue 0
+  end
+
+  def average_zeroed_inness
+    (reviews.map(&:zeroed_in).reduce(:+)/reviews.count) rescue 0
+  end
 end

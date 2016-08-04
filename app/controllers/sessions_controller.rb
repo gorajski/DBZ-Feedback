@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
-  # def new
-  # end
+  def new
+  end
 
   def create
     @user = User.find_by(email: sessions_params[:email])
@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else
-      redirect_to new_sessions_path
+      flash.now[:notice] = "Invalid Credentials"
+      render new_sessions_path
     end
   end
 

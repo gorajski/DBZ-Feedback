@@ -28,10 +28,7 @@ ActiveRecord::Schema.define(version: 20160803231715) do
     t.string   "content"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-<<<<<<< HEAD
     t.boolean  "appropriate"
-=======
->>>>>>> registration
   end
 
   create_table "reviews", force: :cascade do |t|

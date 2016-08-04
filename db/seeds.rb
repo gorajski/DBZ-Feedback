@@ -15,7 +15,7 @@ def percentage_sample
 end
 
 def random_user
-	User.limit(1).order("RANDOM()")
+	User.limit(1).order("RANDOM()").first
 end
 
 Feedback.delete_all
@@ -24,9 +24,9 @@ Review.delete_all
 
 100.times do
 	User.create(
-		full_name = Faker::Name.name,
-		email = Faker::Hipster.word + "@dbz.edu",
-		password = Faker::Internet.password
+		full_name:Faker::Name.name,
+		email:Faker::Hipster.word + "@dbz.edu",
+		password:Faker::Internet.password
 		)
 end
 300.times do
@@ -40,7 +40,7 @@ end
 		percent_drive: percentage_sample,
 		clarity_of_communication: percentage_sample,
 		content: Faker::Lorem.paragraphs(4).join('\n'),
-		appropriate?: boolean_sample
+		appropriate: boolean_sample
 		)
 end
 1000.times do

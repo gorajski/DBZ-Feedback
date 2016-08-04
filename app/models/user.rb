@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   has_many :feedbacks
   has_many :given_feedbacks, class_name: :Feedback, foreign_key: "author_id"
   has_many :received_feedbacks, class_name: :Feedback, foreign_key: "recipient_id"
@@ -7,5 +8,7 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true
   validates :email, presence: true
+
+  has_secure_password
 
 end

@@ -7,7 +7,7 @@
 			<li class="divider-right"><%= link_to "Review Feedback", new_review_path %></li>
 			<li><%= link_to "Log Out",destroy_session_path %></li>
 			<% else %>
-			<li><%= link_to "Log In", new_session_path %></li>
+			<li><%= link_to "Log In", new_sessions_path %></li>
 			<li><%= link_to "Register", new_user_path %> </li>
 			<% end %>
 		</ul>

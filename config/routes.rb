@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
 resources :users
-root "reviews#index"
+root "sessions#new"
 
-get "/log_in" => "sessions#new", as: :new_session
+  get "/sessions/new" => "sessions#new", :as => "new_sessions"
+  post "/sessions" => "sessions#create"
+  delete "/sessions" => "sessions#destroy"
+
+  # resources :sessions
+
 end

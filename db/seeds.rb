@@ -24,9 +24,9 @@ Review.delete_all
 
 100.times do
 	User.create(
-		full_name:Faker::Name.name,
-		email:Faker::Hipster.word + "@dbz.edu",
-		password:Faker::Internet.password
+		full_name: Faker::Name.name,
+		email: Faker::Hipster.word + "@dbz.edu",
+		password: "password"
 		)
 end
 300.times do

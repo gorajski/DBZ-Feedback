@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  # get "log_in" => "sessions#new", :as => "new_sessions"
-  # delete "log_out" => "sessions#destroy"
+  get "/sessions/new" => "sessions#new", :as => "new_sessions"
+  delete "/sessions" => "sessions#destroy"
 
-  resources :sessions
+  # resources :sessions
 
 end

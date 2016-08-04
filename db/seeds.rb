@@ -15,7 +15,7 @@ def percentage_sample
 end
 
 def random_user
-	User.limit(1).order("RANDOM()")
+	User.limit(1).order("RANDOM()").first
 end
 
 Feedback.delete_all

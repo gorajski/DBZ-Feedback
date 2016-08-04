@@ -13,3 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  $('#faq').hide()
+  $('.open-arrows').on("click", function() {
+    // if ($('#faq').attr("style") === "display: none;") {
+      $('#sidebar').hide()
+      $('#faq').show()
+      $('#faq').css("display", "inline-block")
+    // }
+  })
+  $('.question').on("click", function() {
+    $(".answers").hide()
+    $(".question").css("color", "black")
+    $(this).next().show()
+    $(this).css("color", "lightseagreen")
+  })
+  $('.close-arrows').on("click", function() {
+    $('#sidebar').show()
+    $('#sidebar').css("display", "inline-block")
+    $('#faq').hide()
+  })
+});
+
+

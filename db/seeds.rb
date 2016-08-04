@@ -53,3 +53,8 @@ end
 		)
 end
 
+User.create(
+	full_name: "Broseph",
+	email: 'joe@dbz.edu',
+	password: 'password'
+	)

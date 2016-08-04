@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def logged_in?
-  	!(session[:user_id]==nil)
+  	session[:user_id]
   end
 
   def authorize

@@ -1,8 +1,14 @@
+@font-face{
+	font-family: AmsiPro-Bold;
+	src: url("AmsiPro-Bold.otf");
+}
+
 $dbc-blue:lightseagreen;
 $dbc-gray:lightslategray;
-$dbc-font: AmsiPro-Bold;
+$dbc-font: @font-face;
 $dbc-gold: gold;
 $dbc-blue-highlight: #a5e0dd;
+
 
 
 .center{ margin-left:auto;

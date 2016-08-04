@@ -1,0 +1,27 @@
+@import "shared";
+
+#landing-page{
+	height: 76.5px;
+	display:block;
+}
+
+#site-nav{
+	display: inline-block;
+	position: absolute;
+}
+
+#site-nav ul {
+	list-style-type: none;
+
+}
+
+#site-nav ul li {
+	display: inline-block;
+}
+
+
+#landing-page h1{
+	color: $dbc-gray;
+	display: inline-block;
+	margin: 0;
+}

@@ -10,40 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160803231715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "feedbacks", force: :cascade do |t|
-    t.integer  "author_id"
-    t.integer  "recipient_id"
+    t.integer  "author_id",                null: false
+    t.integer  "recipient_id",             null: false
     t.date     "pair_date"
     t.string   "project_name"
-    t.boolean  "show_up?"
-    t.boolean  "check_in?"
-    t.integer  "percent_drive"
-    t.integer  "clarity_of_communication"
-    t.string   "content"
+    t.boolean  "show_up?",                 null: false
+    t.boolean  "check_in?",                null: false
+    t.integer  "percent_drive",            null: false
+    t.integer  "clarity_of_communication", null: false
+    t.string   "content",                  null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.boolean  "appropriate"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "doable"
-    t.integer  "benevolent"
-    t.integer  "zeroed_in"
-    t.integer  "reviewer_id"
-    t.integer  "feedback_id"
+    t.integer  "doable",      null: false
+    t.integer  "benevolent",  null: false
+    t.integer  "zeroed_in",   null: false
+    t.integer  "reviewer_id", null: false
+    t.integer  "feedback_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "full_name"
-    t.string   "email"
+    t.string   "full_name",       null: false
+    t.string   "email",           null: false
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

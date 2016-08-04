@@ -1,7 +1,7 @@
 class Feedback < ApplicationRecord
-  has_many :reviews  #OK
-  belongs_to :author, class_name: :User  #OK
-  belongs_to :recipient, class_name: :User  #bad!
+  has_many :reviews
+  belongs_to :author, class_name: :User
+  belongs_to :recipient, class_name: :User
 
   validates :author_id, presence: true
   validates :recipient_id, presence: true

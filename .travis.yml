@@ -7,6 +7,8 @@ script:
 - rails spec
 before_script:
 - rails db:create RAILS_ENV=test
+- rails db:migrate
+- rails db:test:prepare
 - rails db:migrate RAILS_ENV=test
 - rails db:seed RAILS_ENV=test
 bundler_args: "--binstubs=./bundler_stubs"

@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.feedback = Feedback.find(params[:feedback_id])
     @review.reviewer = current_user
     if @review.save && request.xhr?
-      render "/feedbacks/show", locals:{feedback: neediestFeedback, errors:@errors}
+      render partial:"/reviews/new", locals:{feedback: neediestFeedback, review:Review.new, errors:@errors}
     elsif @review.save
       redirect_to root_path
     else

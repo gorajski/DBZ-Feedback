@@ -10,4 +10,9 @@ class User < ApplicationRecord
   validates_format_of :email,{with: /.*@dbz.edu\b/, message:" must be a valid DBZ email"}
   has_secure_password
 
+
+  def age_in_hours
+    ((Time.now - self.created_at)/3600).to_i
+  end
+
 end

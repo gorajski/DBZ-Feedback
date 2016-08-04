@@ -1,7 +1,7 @@
 module ReviewsHelper
 
   def neediestFeedback
-    @feedback = Feedback.all.shuffle.first
+    @feedback = Feedback.relevant_sample
   end
 
 end

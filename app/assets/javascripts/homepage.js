@@ -11,7 +11,7 @@ $(function(){
       data: data
     })
     ajaxRequest.always(function(response){
-      $("#review-form").replaceWith(response);
+      $("#review-container").replaceWith(response);
     });
   })
 })

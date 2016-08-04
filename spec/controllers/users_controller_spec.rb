@@ -14,11 +14,11 @@ RSpec.describe UsersController, type: :controller do
 	describe "POST /users" do
 		context "the user input valid info" do
 			it "stores a new user in the database" do
-				expect{post :create, params:{user:{email:"abc@dbz.edu", password:"password"}}}.to change{User.count}.by 1
+				expect{post :create, params:{user:{full_name:"Matt Baker", email:"abc@dbz.edu", password:"password"}}}.to change{User.count}.by 1
 			end
 		end
 		it "redirects the user to the homepage" do
-			post :create, params:{user:{email:"abc@dbz.edu", password:"password"}}
+			post :create, params:{user:{full_name:"Duke Greene", email:"abc@dbz.edu", password:"password"}}
 			expect(response).to redirect_to "/"
 		end
 	end

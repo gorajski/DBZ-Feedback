@@ -54,11 +54,3 @@ class Feedback < ApplicationRecord
 
 end
 
-
-# list = {}
-# fb.map do |piece|
-#   list[piece.id] = ((Time.now - piece.created_at)/3600).to_i - piece.reviews.count + ((Time.now - piece.author.created_at)/3600).to_i
-# end
-
-# [69, 61, 66, 51, 64, 1, 77, 14, 155, 104, 118, 132, 157]
-# 157   69

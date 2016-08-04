@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :received_feedbacks, class_name: :Feedback, foreign_key: "recipient_id"
   has_many :given_reviews, class_name: :Review, foreign_key: "reviewer_id"
   has_many :received_reviews, through: :feedbacks, source: :review
+  has_secure_password
 end

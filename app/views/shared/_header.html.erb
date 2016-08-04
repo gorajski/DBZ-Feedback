@@ -4,7 +4,7 @@
 		<ul>
 			<% if logged_in? %>
 			<li ><%= link_to "LEAVE FEEDBACK", new_feedback_path %></li>
-			<li class="divider-right"><%= link_to "REVIEW FEEDBACK", new_review_path %></li>
+			<li class="divider-right"><%= link_to "REVIEW FEEDBACK", reviews_path %></li>
 			<li><%= link_to "LOG OUT",destroy_session_path, method:"delete" %></li>
 			<% else %>
 			<li><%= link_to "LOG IN", new_sessions_path %></li>

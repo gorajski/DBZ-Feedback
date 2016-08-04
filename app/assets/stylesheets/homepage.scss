@@ -25,3 +25,16 @@
 	display: inline-block;
 	margin: 0;
 }
+
+.feedback-body {
+  display: inline-block;
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#review-form {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 200px;
+}

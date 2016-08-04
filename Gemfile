@@ -36,6 +36,7 @@ group :development, :test do
   gem 'selenium-webdriver'
  	gem 'simplecov'
   gem 'factory_girl'
+  gem 'rails-controller-testing'
 
 end
 

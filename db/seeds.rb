@@ -106,3 +106,10 @@ end
 			)
 	end
 end
+
+User.create(
+	full_name: "Josiff",
+	email: 'josiff@dbz.edu',
+	is_admin: true,
+	password: 'password'
+	)

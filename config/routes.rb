@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "reviews#index"
+get "/users/auto" => "users#auto"
 
   resources :users
   resources :feedbacks do
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
 
   get "/reviews" => "reviews#index", :as => "reviews"
+
 end

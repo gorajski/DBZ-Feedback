@@ -1,0 +1,9 @@
+@import 'shared';
+input:not([type='submit']) {
+	border: 3px solid whitesmoke;
+	border-radius: 3px;
+}
+
+label{
+	color: gainsboro;
+}

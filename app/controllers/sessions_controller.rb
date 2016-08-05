@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: sessions_params[:email])
 
-    if @user && @user.authenticate(sessions_params[:password])
+    if @user && @user.authenticate(sessions_params[:password]) && @user.is_admin == true
+      session[:user_id] = @user.id
+      redirect_to admins_path
+    elsif @user && @user.authenticate(sessions_params[:password])
       session[:user_id] = @user.id
       redirect_to '/'
     else

@@ -50,7 +50,7 @@ class Feedback < ApplicationRecord
   end
 
   def self.exemplary
-    all.select{|feedback| feedback.average_benevolence < 30 && feedback.reviews.length >2 }
+    all.select{|fb| fb.return_if_appropriate}
   end
 
   def self.build_relevancy_index

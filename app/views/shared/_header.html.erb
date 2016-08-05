@@ -1,5 +1,5 @@
 <header id="landing-page">
-	<h1 id="logo"> <span class="dbz">dbz</span>l<%=image_tag("dbc-loop.png")%>p</h1>
+	<%=link_to image_tag("pngloop.png", border: 0), {action: 'index', controller: 'reviews'}, {class: 'logo'} %>
 	<nav id="site-nav">
 		<ul>
 			<% if logged_in? %>

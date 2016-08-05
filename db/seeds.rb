@@ -63,13 +63,13 @@ if Rails.env.test?
 	User.delete_all
 	Review.delete_all
 
-	joe = User.create(
+	User.create(
 		full_name:"BROSEPH",
 		email:"joe@dbz.edu",
 		password:"password"
 		)
 
-	helom = User.create(
+	User.create(
 		full_name: "HELOM",
 		email: "helom@dbz.edu",
 		password: "password"

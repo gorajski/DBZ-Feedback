@@ -11,8 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def admin
-
 
   def create
     @user = User.new(user_params)

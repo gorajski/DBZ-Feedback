@@ -19,11 +19,15 @@ if Rails.env.development?
 		User.limit(1).order("RANDOM()").first
 	end
 
+	def random_feedback
+		Feedback.limit(1).order("RANDOM()").first
+	end
+
 	Feedback.delete_all
 	User.delete_all
 	Review.delete_all
 
-	100.times do
+	15.times do
 		User.create(
 			full_name: Faker::Name.name,
 			email: Faker::Hipster.word + "@dbz.edu",
@@ -36,8 +40,8 @@ if Rails.env.development?
 			recipient_id: random_user.id,
 			pair_date:Faker::Time.between(DateTime.now - 20, DateTime.now),
 			project_name: Faker::Hacker.verb + " " + Faker::Hacker.noun,
-			show_up?: boolean_sample,
-			check_in?: boolean_sample,
+			show_up: boolean_sample,
+			check_in: boolean_sample,
 			percent_drive: percentage_sample,
 			clarity_of_communication: percentage_sample,
 			content: Faker::Lorem.paragraphs(4).join('\n'),
@@ -45,7 +49,7 @@ if Rails.env.development?
 			)
 	end
 	1000.times do
-		Review.create!(
+		Review.create(
 			doable: percentage_sample,
 			benevolent: percentage_sample,
 			zeroed_in: percentage_sample,

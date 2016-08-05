@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true
   validates :email, presence: true
+  validates_format_of :email,{with: /.*@dbz.edu\b/, message:" must be a valid DBZ email"}
+  has_secure_password
 
 
   def age_in_hours

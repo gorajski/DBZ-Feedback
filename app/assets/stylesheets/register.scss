@@ -1,9 +1,17 @@
 @import 'shared';
-input:not([type='submit']) {
+input:not([type='submit']), textarea {
 	border: 3px solid whitesmoke;
 	border-radius: 3px;
 }
 
 label{
 	color: gainsboro;
+}
+
+input[type="submit"]{
+	border:none;
+	background-color: $dbc-gold;
+	color: $dbc-brown;
+	padding: 10px;
+	border-radius: 5px;
 }

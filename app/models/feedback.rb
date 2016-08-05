@@ -5,12 +5,24 @@ class Feedback < ApplicationRecord
 
   validates :author_id, presence: true
   validates :recipient_id, presence: true
-  validates :show_up?, presence: true
-  validates :check_in?, presence: true
+  validates :show_up, presence: true
+  validates :check_in, presence: true
   validates :percent_drive, presence: true
   validates :clarity_of_communication, presence: true
   validates :content, presence: true
   validates_length_of :content, :minimum => 10
+
+  def average_doability
+    (reviews.map(&:doable).reduce(:+)/reviews.count) rescue 0
+  end
+
+  def average_benevolence
+    (reviews.map(&:benevolence).reduce(:+)/reviews.count) rescue 0
+  end
+
+  def average_zeroed_inness
+    (reviews.map(&:zeroed_in).reduce(:+)/reviews.count) rescue 0
+  end
 
   def self.relevant_sample
 
@@ -30,7 +42,7 @@ class Feedback < ApplicationRecord
 
     unsorted_index = {}      # KEY => index of feedback, VALUE => relevancy_score
     feedbacks.map do |piece|
-      unsorted_index[piece.id] = piece.age_in_hours - (piece.reviews.count * piece.reviews.count) + piece.author.age_in_hours
+      unsorted_index[piece.id] = piece.age_in_hours - (piece.author.received_reviews.count * piece.author.received_reviews.count) + piece.author.age_in_hours
     end
 
     relevancy_index = unsorted_index.sort_by { |index, score| score }.reverse
@@ -52,5 +64,8 @@ class Feedback < ApplicationRecord
     Feedback.find(feedback_id).author == current_user
   end
 
+  # def recipient=(recipient_name)
+  #   User.find_by_full_name(recipient_name).id
+  # end
 end
 

@@ -1,0 +1,17 @@
+<ul class="tab-nav">
+  <li class="<%="active" if active_tab == "given" %> tab "><%= link_to "Feedback Given", user_path(@user)+"?active_tab=given" %></li>
+  <li class="<%="active" if active_tab == "received"%> tab"><%= link_to "Feedback Received", user_path(@user)%></li>
+</ul>
+<h1 class="name"><%=@user.full_name%></h1>
+
+<div id="feedback-given" class=<%="hidden" if active_tab == "received"%>>
+<h2 class="feedback-header">FEEDBACK GIVEN</h2>
+<%= render partial:"/feedbacks/show", collection:@feedback_given, as: :feedback %>
+</div>
+
+<div id="feedback-received"class=<%="hidden" if active_tab == "given"%>>
+<h2 class="feedback-header">FEEDBACK RECEIVED</h2>
+<%= render partial:"/feedbacks/show", collection:@feedback_received, as: :feedback %>
+</div>
+
+

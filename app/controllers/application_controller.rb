@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception, except: "users#auto"
+  include ApplicationHelper
+  protect_from_forgery with: :exception, except: [:index, "users#auto"]
 end

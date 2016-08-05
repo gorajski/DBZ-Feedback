@@ -1,0 +1,31 @@
+
+<div class="feedback">
+  <article class="feedback-body">
+    <%= feedback.content %>
+    <br>
+    <p class="date"><span class="verb"><%= (active_tab == "received") ? "received" : "given"%></span> <%= time_ago_in_words(feedback.created_at) %> ago</p>
+  </article>
+  <ul class="feedback-stats <%="hidden" if active_tab == "received"%>">
+    <li> Your Peers Think This Feedback Is: </li>
+    <li><span class="stat"><%= feedback.average_doability%>%</span> DOABLE </li>
+    <li><span class="stat"><%= feedback.average_benevolence%>%</span> BENEVOLENT </li>
+    <li><span class="stat"><%= feedback.average_zeroed_inness %>%</span> ZEROED IN </li>
+  </ul>
+  <div class="feedback-status <%= "hidden" if active_tab == "received"%>">
+    <p> Approved?</p><i class="fa fa-<%="check-" if feedback.appropriate%>square-o fa-5x"aria-hidden="true"></i>
+  </div>
+</div>
+<%= render partial: 'shared/error', collection:@errors if @errors %>
+<%= form_for [feedback, review], html: {id: "review-form"} do |r| %>
+  <%= r.label :doable %>:
+  <%= r.select("doable", Review::VALUES, {include_blank: true}) %><br />
+
+
+  <%= r.label :benevolent %>:
+  <%= r.select("benevolent", Review::VALUES, {include_blank: true}) %><br />
+
+  <%= r.label :zeroed_in %>:
+  <%= r.select("zeroed_in", Review::VALUES, {include_blank: true}) %><br />
+
+  <%= r.submit %>
+<% end %>

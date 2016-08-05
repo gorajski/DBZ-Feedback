@@ -3,6 +3,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def auto
+    if request.xhr?
+      users = User.all.pluck(:full_name)
+      render json: users, layout:false, content_type:
+      "application/json"
+    end
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

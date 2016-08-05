@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
 
 $(document).ready(function() {
@@ -33,6 +34,20 @@ $(document).ready(function() {
     $('#sidebar').show()
     $('#sidebar').css("display", "inline-block")
     $('#faq').hide()
+  })
+
+  $('#feedback-recipient').on("keyup", function(event) {
+    event.preventDefault();
+    if ($(this).val().length > 3) {
+      $.ajax({
+        url: '/users/auto',
+        method: 'get'
+      }).done(function(response){
+        $("#feedback-recipient").autocomplete({
+          source: response
+          });
+      });
+    };
   })
 });
 

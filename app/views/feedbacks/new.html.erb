@@ -3,6 +3,10 @@
 <%= form_for(@feedback) do |f| %>
   <div class="feedback-form">
     <div class="feedback-field">
+      <%= f.label :recipient, "Pair name" %>
+      <%= f.text_field :recipient, id: "feedback-recipient" %>
+    </div>
+    <div class="feedback-field">
       <%= f.label :pair_date %>
       <%= f.date_field :pair_date %>
     </div>

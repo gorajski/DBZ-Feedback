@@ -1,4 +1,4 @@
-feature "viewing a user profile" do
+feature "viewing a user profile", js:true do
   scenario "A user can see their given and recieved feedback" do
     visit "/sessions/new"
     fill_in "Email", with: "joe@dbz.edu"

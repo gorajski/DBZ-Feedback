@@ -16,29 +16,29 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('#faq').hide()
+  $('#faq').hide();
   $('.open-arrows').on("click", function() {
     // if ($('#faq').attr("style") === "display: none;") {
-      $('#sidebar').hide()
-      $('#faq').show()
-      $('#faq').css("display", "inline-block")
+      $('#sidebar').hide();
+      $('#faq').show();
+      $('#faq').css("display", "inline-block");
     // }
-  })
+  });
   $('.question').on("click", function() {
-    $(".answers").hide()
-    $(".question").css("color", "black")
-    $(this).next().show()
-    $(this).css("color", "lightseagreen")
-  })
+    $(".answers").hide();
+    $(".question").css("color", "black");
+    $(this).next().show();
+    $(this).css("color", "lightseagreen");
+  });
   $('.close-arrows').on("click", function() {
-    $('#sidebar').show()
-    $('#sidebar').css("display", "inline-block")
-    $('#faq').hide()
-  })
+    $('#sidebar').show();
+    $('#sidebar').css("display", "inline-block");
+    $('#faq').hide();
+  });
 
   $('#feedback-recipient').on("keyup", function(event) {
     event.preventDefault();
-    if ($(this).val().length > 3) {
+    if ($(this).val().length > 1) {
       $.ajax({
         url: '/users/auto',
         method: 'get'
@@ -47,8 +47,8 @@ $(document).ready(function() {
           source: response
           });
       });
-    };
-  })
+    }
+  });
 });
 
 

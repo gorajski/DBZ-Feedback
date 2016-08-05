@@ -15,4 +15,11 @@ class User < ApplicationRecord
     ((Time.now - self.created_at)/3600).to_i
   end
 
+  def review_count_today
+    given_reviews.where("created_at >= ?", Time.zone.now.beginning_of_day).count
+  end
+
+  def good_reviewer?
+    self.review_count_today >=3
+  end
 end

@@ -17,7 +17,7 @@ class Feedback < ApplicationRecord
   end
 
   def average_benevolence
-    (reviews.map(&:benevolence).reduce(:+)/reviews.count) rescue 0
+    (reviews.map(&:benevolent).reduce(:+)/reviews.count) rescue 0
   end
 
   def average_zeroed_inness
@@ -36,6 +36,13 @@ class Feedback < ApplicationRecord
 
   end
 
+  def self.inappropriate
+    all.select{|feedback| feedback.average_benevolence < 30 && feedback.reviews.length >2 }
+  end
+
+  def self.exemplary
+    all.select{|feedback| feedback.average_benevolence < 30 && feedback.reviews.length >2 }
+  end
 
   def self.build_relevancy_index
     feedbacks = Feedback.all
@@ -63,9 +70,5 @@ class Feedback < ApplicationRecord
   def is_author?(feedback_id)
     Feedback.find(feedback_id).author == current_user
   end
-
-  # def recipient=(recipient_name)
-  #   User.find_by_full_name(recipient_name).id
-  # end
 end
 

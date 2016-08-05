@@ -1,9 +1,13 @@
-<h2>Hall of Fame</h2>
+<h2>🏆 Hall of Fame 🏆</h2>
 
-<% hall_of_fames.each do |hall_of_feedback| %>
-<%= hall_of_feedback.content %>
-Doability: <%= hall_of_feedback.average_doability %>
-Benevolence: <%= hall_of_feedback.average_benevolence %>
-Zeroed-Inness: <%= hall_of_feedback.zeroed_inness %>
+<% @hall_of_fames.each do |hall_of_feedback| %>
+<div class="feedback">
+  <article class="feedback-body no-border-bottom"><%= hall_of_feedback.content %><p class="date"> Inducted on: <%= hall_of_feedback.created_at.strftime("%m/%d/%Y") %></p></article>
+
+  <ul class="feedback-stats hall_of_fame_stats">
+    <li>🙌 &nbsp;&nbsp; Doability: <%= hall_of_feedback.average_doability %></li>
+    <li>😇 &nbsp;&nbsp; Benevolence: <%= hall_of_feedback.average_benevolence %></li>
+    <li>💯 &nbsp;&nbsp; Zeroed-Inness: <%= hall_of_feedback.average_zeroed_inness %></li>
+  </ul>
+</div>
 <% end %>
-

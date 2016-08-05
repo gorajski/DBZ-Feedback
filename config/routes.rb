@@ -10,6 +10,8 @@ get "/users/auto" => "users#auto"
 
   get "/admins" => "admins#show"
 
+  get "/hall_of_fames" => "hall_of_fames#show", :as => "hall_of_fames"
+
   get "/sessions/new" => "sessions#new", :as => "new_sessions"
   post "/sessions" => "sessions#create"
   delete "/sessions" => "sessions#destroy", :as => :destroy_session

@@ -24,6 +24,15 @@ class Feedback < ApplicationRecord
     (reviews.map(&:zeroed_in).reduce(:+)/reviews.count) rescue 0
   end
 
+  def total_reviews_average
+    (average_doability + average_benevolence + average_zeroed_inness)/3
+  end
+
+  def return_if_appropriate
+    return self if total_reviews_average >= 50
+  end
+
+
   def self.relevant_sample
 
     relevancy_index = Feedback.build_relevancy_index

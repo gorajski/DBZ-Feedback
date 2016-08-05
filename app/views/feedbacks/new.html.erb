@@ -9,7 +9,7 @@
     </div>
     <div class="feedback-field">
       <%= f.label :pair_date %>
-      <%= f.date_field :pair_date %>
+      <%= f.date_field :pair_date, :value => Time.now.strftime('%Y-%m-%d') %>
     </div>
     <div class="feedback-field">
       <%= f.label :project_name %>

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "reviewing feedback on the homepage" do
+feature "reviewing feedback on the homepage", js:true do
   scenario "a feedback shows up on the page " do
     visit "/sessions/new"
     fill_in "Email", with: "joe@dbz.edu"

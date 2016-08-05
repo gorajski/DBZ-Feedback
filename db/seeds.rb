@@ -27,6 +27,12 @@ if Rails.env.development?
 	User.delete_all
 	Review.delete_all
 
+	User.create(
+		full_name:"BROSEPH",
+		email:"joe@dbz.edu",
+		password:"password"
+		)
+
 	15.times do
 		User.create(
 			full_name: Faker::Name.name,
@@ -49,12 +55,12 @@ if Rails.env.development?
 			)
 	end
 	1000.times do
-		Review.create(
+		Review.create!(
 			doable: percentage_sample,
 			benevolent: percentage_sample,
 			zeroed_in: percentage_sample,
 			reviewer_id: random_user.id,
-			feedback_id: random_user.id
+			feedback_id: random_feedback.id
 			)
 	end
 end

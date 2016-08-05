@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def admin
+
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -24,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    redirect_to "/", notice: "Review three pieces of feedback today to unlock your profile!" unless current_user.good_reviewer?
     @user = current_user
     @feedback_given = @user.given_feedbacks
     @feedback_received = @user.received_feedbacks.select {|feedback| feedback.return_if_appropriate}

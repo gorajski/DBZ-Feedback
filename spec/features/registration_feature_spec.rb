@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "registering a new user" do
+feature "registering a new user", js:true do
 	scenario "the user inputs valid info and gets logged in" do
 		visit "/users/new"
 		fill_in "Full name", with: "Broseephus"

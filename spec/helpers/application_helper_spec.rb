@@ -32,19 +32,4 @@ RSpec.describe ApplicationHelper, type: :helper do
 			expect(current_user).to be nil
 		end
 	end
-
-	describe "#authorize" do
-		# context "the user is allowed to see the content" do
-		# 	it "redirects to the root" do
-		# 		session[:user_id] = nil
-		# 		expect(authorize).to
-		# 	end
-		# end
-		# context "the user is not allowed to see the content" do
-		# 	it "returns nil" do
-		# 		user = User.create(email:"me@dbz.edu", password:"passw0rd")
-		# 		session[:user_id] = user.id
-		# 		expect(authorize).to be nil
-		# 	end
-	end
 end

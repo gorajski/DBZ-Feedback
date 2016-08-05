@@ -4,7 +4,7 @@ RSpec.describe Feedback, type: :model do
   let(:user) { User.create(full_name: "user", email: "user@user") }
   let(:pair) { User.create(full_name: "pair", email: "pair@pair") }
   let(:reviewer) { User.create(full_name: "reviewer", email: "reviewer@reviewer") }
-  let(:feedback) { Feedback.new(show_up?: true, check_in?: true, percent_drive: 40, clarity_of_communication: 4, content: "Four score and seven years ago") }
+  let(:feedback) { Feedback.new(show_up: true, check_in: true, percent_drive: 40, clarity_of_communication: 4, content: "Four score and seven years ago") }
   let(:review) { Review.new(doable: 4, benevolent: 4, zeroed_in: 4) }
 
   before(:each) do

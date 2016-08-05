@@ -1,11 +1,11 @@
 @import 'shared';
 input:not([type='submit']), textarea {
-	border: 3px solid whitesmoke;
+	border: 3px solid $dbc-gray;
 	border-radius: 3px;
 }
 
 label{
-	color: gainsboro;
+	color: $dbc-gray;
 }
 
 input[type="submit"]{

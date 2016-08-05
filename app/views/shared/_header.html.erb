@@ -1,9 +1,9 @@
 <header id="landing-page">
-	<h1 id="logo"> <span class="dbz">dbz</span>l<%=image_tag("dbc-loop")%>p</h1>
+	<%=link_to image_tag("pngloop.png", border: 0), {action: 'index', controller: 'reviews'}, {class: 'logo'} %>
 	<nav id="site-nav">
 		<ul>
 			<% if logged_in? %>
-			<li class="divider-right"><%= link_to current_user.full_name.upcase, user_path(current_user) %></li>
+			<li class="divider-right"><%= link_to current_user.full_name.upcase, user_path(current_user)%></li>
 			<li class="divider-right"><%= link_to "LEAVE FEEDBACK", new_feedback_path %></li>
 			<li class="divider-right"><%= link_to "REVIEW FEEDBACK", reviews_path %></li>
 

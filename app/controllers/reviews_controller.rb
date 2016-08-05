@@ -3,16 +3,16 @@ class ReviewsController < ApplicationController
   before_action :authorize
   before_action :neediestFeedback, only: [:index, :create]
 
-	def index
+  def index
     @review = Review.new
-	end
+  end
 
   def create
     @review = Review.new(review_params)
     @review.feedback = Feedback.find(params[:feedback_id])
     @review.reviewer = current_user
     if @review.save && request.xhr?
-      render partial:"/reviews/new", locals:{feedback: neediestFeedback, review:Review.new, errors:@errors}
+        render partial:"/reviews/new", locals:{feedback: neediestFeedback, review:Review.new, errors:@errors}
     elsif @review.save
       redirect_to root_path
     else

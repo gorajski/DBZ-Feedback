@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "visiting the homepage" do
+feature "visiting the homepage", js:true do
 	context "the user is not logged in" do
 		scenario "it can click on a log in button" do
 			visit "/"

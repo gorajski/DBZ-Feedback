@@ -45,6 +45,13 @@ class Feedback < ApplicationRecord
 
   end
 
+  def self.inappropriate
+    all.select{|feedback| feedback.average_benevolence < 30 && feedback.reviews.length >2 }
+  end
+
+  def self.exemplary
+    all.select{|fb| fb.return_if_appropriate}
+  end
 
   def self.build_relevancy_index
     feedbacks = Feedback.all
@@ -72,9 +79,5 @@ class Feedback < ApplicationRecord
   def is_author?(feedback_id)
     Feedback.find(feedback_id).author == current_user
   end
-
-  # def recipient=(recipient_name)
-  #   User.find_by_full_name(recipient_name).id
-  # end
 end
 

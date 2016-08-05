@@ -20,6 +20,14 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.find(params[:id])
   end
 
+  def update
+    @feedback = Feedback.find(params[:id])
+    @feedback.exemplary = true
+    @feedback.save
+
+    redirect_to admins_path
+  end
+
   private
   def feedback_params
     # params.require(:feedback).permit(:content, :recipient, :pair_date, :project_name, :show_up, :check_in, :percent_drive, :clarity_of_communication)

@@ -1,2 +1,33 @@
 <h1><%= @user.full_name %></h1>
 
+# Display new highest rated feedbacks w ability to flag as exemplary
+# Display new inappropriate feedbacks w User
+#
+#
+<div>
+  <% @hall_of_fames.each do |feedback| %>
+    <p>Pair date: <%= feedback.pair_date %></p>
+    <p>Project:<%= feedback.project_name %></p>
+    <p>Showed up?:<%= feedback.show_up %></p>
+    <p>Checked in?<%= feedback.check_in %></p>
+    <p>How much did pair drive?<%= feedback.percent_drive %></p>
+    <p>How clear was pair's communication?<%= feedback.clarity_of_communication %></p>
+    <p>Content:<%= feedback.content %></p>
+    <%= form_tag(feedback_path(feedback.id), {method: :put}) %>
+    <%= submit_tag "Send to Hall of Fame" %>
+  <% end %>
+</div>
+
+<div>
+  <% @bad_feedbacks.each do |feedback| %>
+    <p>Author: <%= feedback.author.full_name %></p>
+    <p>Pair date: <%= feedback.pair_date %></p>
+    <p>Project:<%= feedback.project_name %></p>
+    <p>Showed up?:<%= feedback.show_up %></p>
+    <p>Checked in?<%= feedback.check_in %></p>
+    <p>How much did pair drive?<%= feedback.percent_drive %></p>
+    <p>How clear was pair's communication?<%= feedback.clarity_of_communication %></p>
+    <p>Content:<%= feedback.content %></p>
+  <% end %>
+</div>
+

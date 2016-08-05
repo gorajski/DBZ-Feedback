@@ -1,23 +1,23 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Review, type: :model do
-  let(:user1) { User.create(full_name: "user1", email: "user1@user1") }
-  let(:user2) { User.create(full_name: "user2", email: "user2@user2") }
-  let(:feedback) { Feedback.new(recipient_id: 1, show_up: true, check_in: true, percent_drive: 40, clarity_of_communication: 4, content: "Four score and seven years ago") }
-  let(:review) { Review.new(doable: 4, benevolent: 4, zeroed_in: 4) }
+# RSpec.describe Review, type: :model do
+#   let(:user1) { User.create(full_name: "user1", email: "user1@user1") }
+#   let(:user2) { User.create(full_name: "user2", email: "user2@user2") }
+#   let(:feedback) { Feedback.new(recipient_id: 1, show_up: true, check_in: true, percent_drive: 40, clarity_of_communication: 4, content: "Four score and seven years ago") }
+#   let(:review) { Review.new(doable: 4, benevolent: 4, zeroed_in: 4) }
 
-  before(:each) do
-    review.reviewer = user1
-    review.feedback = feedback
-    review.save
-  end
+#   before(:each) do
+#     review.reviewer = user1
+#     review.feedback = feedback
+#     review.save
+#   end
 
-  it "describes review's user" do
-    expect(review.reviewer).to eq(user1)
-  end
+#   it "describes review's user" do
+#     expect(review.reviewer).to eq(user1)
+#   end
 
-  it "describes review's feedback" do
-    expect(review.feedback).to eq(feedback)
-  end
+#   it "describes review's feedback" do
+#     expect(review.feedback).to eq(feedback)
+#   end
 
-end
+# end

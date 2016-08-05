@@ -19,11 +19,13 @@
   <div class="feedback-form">
     <div class="feedback-field">
       <%= f.label(:show_up, "My pair showed up and was on time") %>
-      <%= f.check_box(:show_up) %>
+      <%= hidden_field_tag :check_in, false %>
+      <%= f.check_box(:show_up)%>
     </div>
     <div class="feedback-field">
       <%= f.label(:check_in, "My pair and I checked in before beginning coding") %>
-      <%= f.check_box(:check_in) %>
+      <%= hidden_field_tag :check_in, false %>
+      <%= f.check_box(:check_in)%>
     </div>
     <div class="feedback-field">
       <%= f.label :percent_drive, 'Percentage of time my pair drove' %>

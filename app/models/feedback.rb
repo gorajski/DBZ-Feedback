@@ -5,8 +5,6 @@ class Feedback < ApplicationRecord
 
   validates :author_id, presence: true
   validates :recipient_id, presence: true
-  validates :show_up, presence: true
-  validates :check_in, presence: true
   validates :percent_drive, presence: true
   validates :clarity_of_communication, presence: true
   validates :content, presence: true

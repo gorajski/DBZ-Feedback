@@ -5,15 +5,22 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-$dbc-blue:lightseagreen;
-$dbc-gray:lightslategray;
+$dbc-blue:#19abb5;
+$dbc-gray:#828c91;
 $dbc-font: AmsiPro-Bold;
-$dbc-gold: #D4AF37;
+$dbc-gold: #eac100;
 $dbc-blue-highlight: #a5e0dd;
+$dbc-brown: #624e00;
+
 
 .divider-right{
   padding-right: 3px;
   border-right: 1px solid gray;
+}
+
+img{
+	width: auto;
+	height: .6em;
 }
 
 .center{
@@ -40,7 +47,6 @@ body{
 }
 
 #landing-page {
-	border-bottom: 1px solid lightslategray;
 }
 
 
@@ -84,7 +90,7 @@ textarea {
 	right: 0;
   width: 40px;
   height: 100%;
-	background-color: gold;
+	background-color: $dbc-gold;
 }
 
 #faq {
@@ -95,7 +101,7 @@ textarea {
 	right: 0;
   width: 260px;
   height: 100%;
-  border-left: 40px solid gold;
+  border-left: 40px solid $dbc-gold;
 }
 
 .faquestions {

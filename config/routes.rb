@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+root "reviews#index"
 get "/users/auto" => "users#auto"
 
   resources :users
